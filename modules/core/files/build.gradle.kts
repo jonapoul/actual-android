@@ -6,7 +6,6 @@ plugins {
 
 kotlin {
   commonMainDependencies {
-    api(libs.javaxInject)
     api(projects.budget.model)
   }
 }

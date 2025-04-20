@@ -1,13 +1,19 @@
+import blueprint.core.androidMainDependencies
+import blueprint.core.commonMainDependencies
+
 plugins {
-  alias(libs.plugins.module.hilt)
+  alias(libs.plugins.module.metro)
 }
 
-dependencies {
-  api(libs.alakazam.android.core)
-  api(libs.alakazam.kotlin.core)
-  api(libs.hilt.android)
-  api(libs.javaxInject)
-  api(libs.preferences.core)
-  api(projects.core.files)
-  implementation(libs.preferences.android)
+kotlin {
+  commonMainDependencies {
+    api(projects.core.files)
+    api(libs.alakazam.kotlin.core)
+    api(libs.preferences.core)
+  }
+
+  androidMainDependencies {
+    api(libs.alakazam.android.core)
+    implementation(libs.preferences.android)
+  }
 }

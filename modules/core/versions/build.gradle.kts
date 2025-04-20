@@ -7,7 +7,6 @@ plugins {
 kotlin {
   commonMainDependencies {
     api(libs.alakazam.kotlin.core)
-    api(libs.javaxInject)
     implementation(libs.kotlinx.coroutines)
   }
 }

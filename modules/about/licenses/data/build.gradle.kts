@@ -11,7 +11,6 @@ kotlin {
   commonMainDependencies {
     api(libs.kotlinx.serialization.core)
     implementation(libs.alakazam.kotlin.core)
-    implementation(libs.javaxInject)
     implementation(libs.kotlinx.coroutines)
     implementation(libs.kotlinx.serialization.json)
     implementation(projects.core.files)

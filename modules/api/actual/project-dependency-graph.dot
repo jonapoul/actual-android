@@ -5,6 +5,8 @@ node ["style"="filled"]
 ":account:model" ["fillcolor"="#9D8DF1","shape"="box"]
 ":api:actual" ["fillcolor"="#9D8DF1","shape"="box"]
 ":budget:model" ["fillcolor"="#9D8DF1","shape"="box"]
+":codegen:annotation" ["fillcolor"="#9D8DF1","shape"="box"]
+":codegen:ksp" ["fillcolor"="#8000FF","shape"="box"]
 ":url:model" ["fillcolor"="#9D8DF1","shape"="box"]
 {
 edge ["dir"="none"]
@@ -12,13 +14,17 @@ graph ["rank"="same"]
 }
 ":api:actual" -> ":account:model"
 ":api:actual" -> ":budget:model"
+":api:actual" -> ":codegen:annotation" ["style"="dotted"]
+":api:actual" -> ":codegen:ksp"
 ":api:actual" -> ":url:model"
+":codegen:ksp" -> ":codegen:annotation" ["style"="dotted"]
 subgraph "cluster_legend" {
 edge ["dir"="none"]
 graph ["label"="Legend","fontsize"="20"]
 "Legend" ["style"="filled","fillcolor"="#bbbbbb","shape"="none","margin"="0","fontsize"="15","label"=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
 <TR><TD>Multiplatform</TD><TD BGCOLOR="#9D8DF1">module-name</TD></TR>
+<TR><TD>JVM</TD><TD BGCOLOR="#8000FF">module-name</TD></TR>
 </TABLE>
 >]
 } -> ":api:actual" ["style"="invis"]

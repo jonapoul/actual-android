@@ -7,7 +7,6 @@ plugins {
 
 kotlin {
   commonMainDependencies {
-    api(libs.javaxInject)
     api(libs.preferences.core)
   }
 

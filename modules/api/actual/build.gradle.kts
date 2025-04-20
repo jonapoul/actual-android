@@ -12,7 +12,6 @@ plugins {
 kotlin {
   commonMainDependencies {
     api(libs.alakazam.kotlin.core)
-    api(libs.javaxInject)
     api(libs.kotlinx.serialization.json)
     api(libs.retrofit.core)
     api(projects.account.model)

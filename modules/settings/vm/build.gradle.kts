@@ -7,8 +7,6 @@ dependencies {
   api(libs.kotlinx.immutable)
   api(projects.core.colorscheme)
   implementation(libs.androidx.compose.runtime)
-  implementation(libs.hilt.android)
-  implementation(libs.javaxInject)
   implementation(libs.molecule)
   implementation(libs.preferences.core)
   compileOnly(libs.alakazam.kotlin.compose.annotations)

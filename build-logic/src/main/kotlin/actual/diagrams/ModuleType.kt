@@ -24,10 +24,10 @@ fun ModuleType.Finder.color(project: Project): Color {
 enum class ActualModuleType(override val string: String, override val color: String) : ModuleType {
   AndroidApp(string = "App", color = "#FF5555"), // red
   AndroidViewModel(string = "ViewModel", color = "#F5A6A6"), // pink
-  AndroidHilt(string = "Hilt", color = "#FCB103"), // orange
   AndroidCompose(string = "Compose", color = "#FFFF55"), // yellow
   AndroidLibrary(string = "Android", color = "#55FF55"), // green
   AndroidResources(string = "Resources", color = "#00FFFF"), // cyan
+  DI(string = "DI", color = "#FCB102"), // orange. TODO CHANGE COLOUR BACK TO FCB103
   Navigation(string = "Navigation", color = "#5555FF"), // blue
   Multiplatform(string = "Multiplatform", color = "#9D8DF1"), // indigo
   Jvm(string = "JVM", color = "#8000FF"), // violet
@@ -39,7 +39,7 @@ enum class ActualModuleType(override val string: String, override val color: Str
         when {
           hasPlugin("com.android.application") -> AndroidApp
           hasPlugin("actual.module.viewmodel") -> AndroidViewModel
-          hasPlugin("actual.module.hilt") -> AndroidHilt
+          hasPlugin("actual.module.metro") -> DI
           hasPlugin("actual.module.compose") -> AndroidCompose
           hasPlugin("actual.module.android") -> AndroidLibrary
           hasPlugin("actual.module.resources") -> AndroidResources

@@ -1,5 +1,7 @@
 # TODO
 
+- retrofit -> ktor
+
 - Settings screen
   - Themes
   - Notifications?

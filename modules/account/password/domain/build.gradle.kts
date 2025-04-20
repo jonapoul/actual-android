@@ -6,7 +6,6 @@ plugins {
 
 kotlin {
   commonMainDependencies {
-    api(libs.javaxInject)
     api(projects.account.login.domain)
     api(projects.account.model)
     implementation(libs.alakazam.kotlin.core)

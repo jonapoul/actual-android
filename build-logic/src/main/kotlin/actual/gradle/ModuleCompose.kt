@@ -17,7 +17,6 @@ class ModuleCompose : Plugin<Project> {
       apply(ConventionAndroidLibrary::class.java)
       apply(ConventionCompose::class.java)
       apply(ConventionDiagrams::class.java)
-      apply(ConventionHilt::class.java)
       apply(ConventionKover::class.java)
       apply(ConventionIdea::class.java)
       apply(ConventionStyle::class.java)

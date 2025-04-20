@@ -11,7 +11,6 @@ kotlin {
     api(libs.retrofit.core)
     api(projects.api.github)
     api(libs.alakazam.kotlin.core)
-    implementation(libs.javaxInject)
     implementation(libs.kotlinx.coroutines)
     implementation(libs.kotlinx.serialization.core)
     implementation(libs.kotlinx.serialization.json)

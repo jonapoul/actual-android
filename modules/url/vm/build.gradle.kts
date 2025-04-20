@@ -9,8 +9,6 @@ dependencies {
   api(projects.url.model)
   implementation(libs.alakazam.kotlin.logging)
   implementation(libs.androidx.compose.runtime)
-  implementation(libs.hilt.android)
-  implementation(libs.javaxInject)
   implementation(libs.molecule)
   implementation(libs.preferences.core)
   implementation(projects.account.login.domain)
