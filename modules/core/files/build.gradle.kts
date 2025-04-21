@@ -7,5 +7,6 @@ plugins {
 kotlin {
   commonMainDependencies {
     api(projects.budget.model)
+    implementation(libs.metro.runtime)
   }
 }

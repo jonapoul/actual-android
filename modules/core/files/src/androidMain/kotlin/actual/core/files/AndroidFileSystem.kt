@@ -2,8 +2,8 @@ package actual.core.files
 
 import actual.budget.model.BudgetId
 import android.content.Context
+import dev.zacsweers.metro.Inject
 import java.io.File
-import javax.inject.Inject
 
 class AndroidFileSystem @Inject constructor(context: Context) : FileSystem {
   private val databaseDirectory = context

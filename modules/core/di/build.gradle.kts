@@ -14,6 +14,7 @@ kotlin {
 
   androidMainDependencies {
     api(libs.alakazam.android.core)
+    implementation(libs.androidx.preference.ktx)
     implementation(libs.preferences.android)
   }
 }
