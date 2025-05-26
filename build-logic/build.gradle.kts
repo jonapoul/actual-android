@@ -47,11 +47,9 @@ dependencies {
   implementation(libs.plugin.jacoco)
 }
 
-tasks {
-  validatePlugins {
-    enableStricterValidation = true
-    failOnWarning = true
-  }
+tasks.validatePlugins {
+  enableStricterValidation = true
+  failOnWarning = true
 }
 
 gradlePlugin {
