@@ -7,6 +7,8 @@ import org.gradle.api.plugins.JavaBasePlugin
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFile
+import org.gradle.api.tasks.PathSensitive
+import org.gradle.api.tasks.PathSensitivity
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.property
 import org.gradle.work.DisableCachingByDefault
@@ -14,9 +16,16 @@ import javax.inject.Inject
 
 @DisableCachingByDefault
 open class CheckDotFileTask @Inject constructor(objects: ObjectFactory) : DefaultTask() {
-  @get:Input val taskPath: Property<String> = objects.property()
-  @get:InputFile val expectedDotFile: RegularFileProperty = objects.fileProperty()
-  @get:InputFile val actualDotFile: RegularFileProperty = objects.fileProperty()
+  @get:Input
+  val taskPath: Property<String> = objects.property()
+
+  @get:InputFile
+  @get:PathSensitive(PathSensitivity.ABSOLUTE)
+  val expectedDotFile: RegularFileProperty = objects.fileProperty()
+
+  @get:InputFile
+  @get:PathSensitive(PathSensitivity.ABSOLUTE)
+  val actualDotFile: RegularFileProperty = objects.fileProperty()
 
   init {
     group = JavaBasePlugin.VERIFICATION_GROUP
