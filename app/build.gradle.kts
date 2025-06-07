@@ -44,7 +44,7 @@ android {
     versionCode = gitCode.toInt()
     versionName = versionName()
     multiDexEnabled = true
-    setProperty("archivesBaseName", "$applicationId-$versionName")
+    base.archivesName = "$applicationId-$versionName"
 
     val kotlinTime = "kotlinx.datetime.Instant.Companion.fromEpochMilliseconds(${System.currentTimeMillis()}L)"
     buildConfigField("kotlinx.datetime.Instant", "BUILD_TIME", kotlinTime)
