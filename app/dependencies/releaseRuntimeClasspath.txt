@@ -153,10 +153,10 @@ com.google.android.material:material:1.12.0
 com.google.code.findbugs:jsr305:3.0.2
 com.google.code.gson:gson:2.8.9
 com.google.crypto.tink:tink-android:1.8.0
-com.google.dagger:dagger-lint-aar:2.56.2
-com.google.dagger:dagger:2.56.2
-com.google.dagger:hilt-android:2.56.2
-com.google.dagger:hilt-core:2.56.2
+com.google.dagger:dagger-lint-aar:2.57
+com.google.dagger:dagger:2.57
+com.google.dagger:hilt-android:2.57
+com.google.dagger:hilt-core:2.57
 com.google.errorprone:error_prone_annotations:2.15.0
 com.google.guava:listenablefuture:1.0
 com.patrykandpatrick.vico:compose:2.1.3
