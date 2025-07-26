@@ -37,7 +37,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import logcat.logcat
-import javax.inject.Inject
 
 @HiltViewModel
 class ServerUrlViewModel @Inject internal constructor(

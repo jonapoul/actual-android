@@ -16,7 +16,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import logcat.logcat
-import javax.inject.Inject
 
 @HiltViewModel
 class LicensesViewModel @Inject internal constructor(

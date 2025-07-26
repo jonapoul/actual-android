@@ -18,7 +18,6 @@ dependencies {
   implementation(libs.androidx.activity.compose)
   implementation(libs.androidx.compose.animation.core)
   implementation(libs.androidx.compose.foundation.core)
-  implementation(libs.androidx.compose.hilt)
   implementation(libs.androidx.compose.material.icons.core)
   implementation(libs.androidx.compose.material.icons.extended)
   implementation(libs.androidx.compose.material3)
@@ -32,7 +31,6 @@ dependencies {
   implementation(libs.androidx.lifecycle.runtime.compose)
   implementation(libs.androidx.lifecycle.viewmodel.compose)
   implementation(libs.androidx.lifecycle.viewmodel.core)
-  implementation(libs.hilt.android)
   implementation(libs.kotlinx.coroutines)
   implementation(libs.kotlinx.immutable)
 }

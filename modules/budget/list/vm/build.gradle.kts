@@ -6,7 +6,6 @@ dependencies {
   api(project(":modules:budget:model"))
   api(project(":modules:core:model"))
   api(libs.alakazam.kotlin.core)
-  api(libs.javaxInject)
   api(libs.kotlinx.coroutines)
   api(libs.kotlinx.immutable)
   implementation(project(":modules:account:model"))

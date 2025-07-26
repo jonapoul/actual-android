@@ -4,7 +4,7 @@ import actual.account.model.LoginToken
 import actual.account.model.Password
 import actual.api.model.sync.EncryptMeta
 import actual.api.model.sync.UserFile
-import actual.budget.di.BudgetComponentStateHolder
+import actual.budget.di.BudgetGraphHolder
 import actual.budget.encryption.KeyGenerator
 import actual.budget.model.BudgetFiles
 import actual.budget.model.BudgetId
@@ -50,17 +50,17 @@ import kotlin.time.Duration.Companion.seconds
 @Suppress("LongParameterList", "ComplexCondition", "UnusedPrivateProperty")
 @HiltViewModel(assistedFactory = SyncBudgetViewModel.Factory::class)
 class SyncBudgetViewModel @AssistedInject constructor(
-  @Assisted inputs: Inputs,
-  private val fileDownloader: BudgetFileDownloader,
-  private val infoFetcher: BudgetInfoFetcher,
-  private val decrypter: Decrypter,
-  private val importer: DatabaseImporter,
-  private val files: BudgetFiles,
-  private val urlOpener: UrlOpener,
-  private val keyGenerator: KeyGenerator,
-  private val keyFetcher: KeyFetcher,
-  private val keyPreferences: KeyPreferences,
-  private val budgetComponents: BudgetComponentStateHolder,
+    @Assisted inputs: Inputs,
+    private val fileDownloader: BudgetFileDownloader,
+    private val infoFetcher: BudgetInfoFetcher,
+    private val decrypter: Decrypter,
+    private val importer: DatabaseImporter,
+    private val files: BudgetFiles,
+    private val urlOpener: UrlOpener,
+    private val keyGenerator: KeyGenerator,
+    private val keyFetcher: KeyFetcher,
+    private val keyPreferences: KeyPreferences,
+    private val budgetComponents: BudgetGraphHolder,
 ) : ViewModel() {
   private val token = inputs.token
   private val budgetId = inputs.budgetId

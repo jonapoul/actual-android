@@ -16,7 +16,6 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.withContext
 import logcat.logcat
 import java.io.IOException
-import javax.inject.Inject
 
 class BudgetListFetcher @Inject internal constructor(
   private val contexts: CoroutineContexts,
