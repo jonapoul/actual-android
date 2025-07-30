@@ -7,9 +7,6 @@ import dev.zacsweers.metro.Provides
 
 @BindingContainer
 class DebugContainer(
-  private val defaultPassword: Password.Provider,
-  private val defaultServerUrl: ServerUrl.Provider,
-) {
-  @Provides fun password(): Password.Provider = defaultPassword
-  @Provides fun serverUrl(): ServerUrl.Provider = defaultServerUrl
-}
+  @get:Provides val defaultPassword: Password.Provider,
+  @get:Provides val defaultServerUrl: ServerUrl.Provider,
+)

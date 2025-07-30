@@ -25,20 +25,21 @@ import kotlin.test.assertFailsWith
 import kotlin.uuid.Uuid
 
 @RunWith(RobolectricTestRunner::class)
-class BudgetComponentStateHolderTest {
-  private lateinit var stateHolder: BudgetGraphHolder
+class BudgetGraphHolderTest {
+  private lateinit var holder: BudgetGraphHolder
 
   private fun TestScope.before() {
     val context = ApplicationProvider.getApplicationContext<Context>()
     val fileSystem = FileSystem.SYSTEM
     val files = AndroidBudgetFiles(context, fileSystem)
     val contexts = TestCoroutineContexts(standardDispatcher)
-    stateHolder = BudgetGraphHolder(context, files, this, contexts)
+    val builder = AndroidBudgetGraphBuilder(context, scope = this, contexts, files)
+    holder = BudgetGraphHolder(builder)
   }
 
   @AfterTest
   fun after() {
-    stateHolder.close()
+    holder.close()
   }
 
   @Test
@@ -49,31 +50,31 @@ class BudgetComponentStateHolderTest {
     val metadata1 = metadata(id = "abc-123")
 
     // create database
-    val component1 = stateHolder.update(metadata1)
+    val graph1 = holder.update(metadata1)
 
     // insert data and validate
-    assertEmpty(component1.fetchData(bankId))
-    component1.insertData(bankId)
-    assertEquals(expected = 1, actual = component1.fetchData(bankId).size)
+    assertEmpty(graph1.fetchData(bankId))
+    graph1.insertData(bankId)
+    assertEquals(expected = 1, actual = graph1.fetchData(bankId).size)
 
     // target a different database
     val metadata2 = metadata(id = "xyz-789")
-    val component2 = stateHolder.update(metadata2)
+    val graph2 = holder.update(metadata2)
 
     // insert data separately and re-validate
-    assertEmpty(component2.fetchData(bankId))
-    component2.insertData(bankId)
-    assertEquals(expected = 1, actual = component2.fetchData(bankId).size)
+    assertEmpty(graph2.fetchData(bankId))
+    graph2.insertData(bankId)
+    assertEquals(expected = 1, actual = graph2.fetchData(bankId).size)
 
     // try to access the first db, but it's closed
-    val e = assertFailsWith<IllegalStateException> { component1.fetchData(bankId) }
+    val e = assertFailsWith<IllegalStateException> { graph1.fetchData(bankId) }
     assertContains(e.requireMessage(), "attempt to re-open an already-closed object")
 
     // close the second one
-    stateHolder.close()
+    holder.close()
 
     // and accessing it fails
-    assertFailsWith<IllegalStateException> { component2.fetchData(bankId) }
+    assertFailsWith<IllegalStateException> { graph2.fetchData(bankId) }
   }
 
   private fun metadata(id: String) = DbMetadata(

@@ -41,15 +41,15 @@ import logcat.logcat
 
 @HiltViewModel
 internal class ActualActivityViewModel @Inject constructor(
-    private val scope: CoroutineScope,
-    private val contexts: CoroutineContexts,
-    private val connectionMonitor: ConnectionMonitor,
-    private val serverPinger: ServerPinger,
-    private val pingStateHolder: PingStateHolder,
-    private val serverVersionFetcher: ServerVersionFetcher,
-    private val files: BudgetFiles,
-    budgetComponents: BudgetGraphHolder,
-    preferences: AppGlobalPreferences,
+  private val scope: CoroutineScope,
+  private val contexts: CoroutineContexts,
+  private val connectionMonitor: ConnectionMonitor,
+  private val serverPinger: ServerPinger,
+  private val pingStateHolder: PingStateHolder,
+  private val serverVersionFetcher: ServerVersionFetcher,
+  private val files: BudgetFiles,
+  budgetComponents: BudgetGraphHolder,
+  preferences: AppGlobalPreferences,
 ) : ViewModel() {
   private val component = budgetComponents.stateIn(viewModelScope, Eagerly, initialValue = null)
 

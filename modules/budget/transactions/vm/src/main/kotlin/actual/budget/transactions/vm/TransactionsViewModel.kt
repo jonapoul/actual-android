@@ -47,9 +47,9 @@ import kotlin.collections.map
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel(assistedFactory = TransactionsViewModel.Factory::class)
 class TransactionsViewModel @AssistedInject constructor(
-    @Assisted inputs: Inputs,
-    components: BudgetGraphHolder,
-    contexts: CoroutineContexts,
+  @Assisted inputs: Inputs,
+  components: BudgetGraphHolder,
+  contexts: CoroutineContexts,
 ) : ViewModel() {
   // data sources
   private val component = components.require()

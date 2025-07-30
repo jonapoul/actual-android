@@ -28,9 +28,9 @@ import logcat.logcat
 
 @HiltViewModel(assistedFactory = ChooseReportTypeViewModel.Factory::class)
 class ChooseReportTypeViewModel @AssistedInject constructor(
-    private val uuidGenerator: UuidGenerator,
-    budgetComponents: BudgetGraphHolder,
-    @Assisted inputs: Inputs,
+  private val uuidGenerator: UuidGenerator,
+  budgetComponents: BudgetGraphHolder,
+  @Assisted inputs: Inputs,
 ) : ViewModel() {
   // data sources
   private val component = budgetComponents.require()

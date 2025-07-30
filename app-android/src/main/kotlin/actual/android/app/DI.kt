@@ -18,7 +18,7 @@ internal fun setUpDi(
   val factory = createGraphFactory<AndroidAppGraph.Factory>()
   val debug = DebugContainer(
     defaultPassword = { ActualBuildConfig.DEFAULT_PASSWORD?.let(::Password) ?: Password.Empty },
-    defaultServerUrl = { ActualBuildConfig.DEFAULT_URL?.let(::ServerUrl) }
+    defaultServerUrl = { ActualBuildConfig.DEFAULT_URL?.let(::ServerUrl) },
   )
   return factory.create(
     context = context,
