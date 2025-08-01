@@ -13,13 +13,12 @@ plugins {
   alias(libs.plugins.kotlin.android)
   alias(libs.plugins.kotlin.serialization)
   alias(libs.plugins.agp.app)
-  alias(libs.plugins.hilt)
   alias(libs.plugins.manifestLock)
   alias(libs.plugins.convention.kotlin.jvm)
   alias(libs.plugins.convention.android.base)
   alias(libs.plugins.convention.compose)
+  alias(libs.plugins.convention.di)
   alias(libs.plugins.convention.diagrams)
-  alias(libs.plugins.convention.hilt)
   alias(libs.plugins.convention.style)
   alias(libs.plugins.convention.test)
   alias(libs.plugins.dependencySort)
@@ -123,11 +122,6 @@ android {
   }
 }
 
-hilt {
-  enableAggregatingTask = true
-  enableExperimentalClasspathAggregation = true
-}
-
 licensee {
   bundleAndroidAsset = true
 }
@@ -167,9 +161,6 @@ dependencies {
   implementation(libs.androidx.navigation.runtime)
   implementation(libs.androidx.preference.ktx)
   implementation(libs.androidx.splash)
-  implementation(libs.dagger.core)
-  implementation(libs.hilt.android)
-  implementation(libs.javaxInject)
   implementation(libs.kotlin.stdlib)
   implementation(libs.kotlinx.coroutines)
   implementation(libs.kotlinx.serialization.core)

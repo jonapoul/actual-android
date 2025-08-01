@@ -4,7 +4,7 @@ package actual.android.app
 
 import actual.account.model.LoginToken
 import actual.budget.db.dao.PreferencesDao
-import actual.budget.di.BudgetComponentStateHolder
+import actual.budget.di.BudgetGraphHolder
 import actual.budget.model.BudgetFiles
 import actual.budget.model.DbMetadata
 import actual.budget.model.NumberFormat
@@ -38,7 +38,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import logcat.logcat
-import javax.inject.Inject
 
 @HiltViewModel
 internal class ActualActivityViewModel @Inject constructor(
@@ -49,7 +48,7 @@ internal class ActualActivityViewModel @Inject constructor(
   private val pingStateHolder: PingStateHolder,
   private val serverVersionFetcher: ServerVersionFetcher,
   private val files: BudgetFiles,
-  budgetComponents: BudgetComponentStateHolder,
+  budgetComponents: BudgetGraphHolder,
   preferences: AppGlobalPreferences,
 ) : ViewModel() {
   private val component = budgetComponents.stateIn(viewModelScope, Eagerly, initialValue = null)

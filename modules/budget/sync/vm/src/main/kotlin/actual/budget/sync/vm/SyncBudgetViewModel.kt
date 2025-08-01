@@ -4,7 +4,7 @@ import actual.account.model.LoginToken
 import actual.account.model.Password
 import actual.api.model.sync.EncryptMeta
 import actual.api.model.sync.UserFile
-import actual.budget.di.BudgetComponentStateHolder
+import actual.budget.di.BudgetGraphHolder
 import actual.budget.encryption.KeyGenerator
 import actual.budget.model.BudgetFiles
 import actual.budget.model.BudgetId
@@ -60,7 +60,7 @@ class SyncBudgetViewModel @AssistedInject constructor(
   private val keyGenerator: KeyGenerator,
   private val keyFetcher: KeyFetcher,
   private val keyPreferences: KeyPreferences,
-  private val budgetComponents: BudgetComponentStateHolder,
+  private val budgetComponents: BudgetGraphHolder,
 ) : ViewModel() {
   private val token = inputs.token
   private val budgetId = inputs.budgetId

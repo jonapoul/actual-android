@@ -10,7 +10,6 @@ tasks.withType<Test>().configureEach {
 kotlin {
   commonMainDependencies {
     api(libs.alakazam.kotlin.serialization)
-    api(libs.javaxInject)
     api(libs.kotlinx.coroutines)
     api(libs.kotlinx.datetime)
     api(libs.kotlinx.immutable)

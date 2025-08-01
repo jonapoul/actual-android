@@ -5,7 +5,7 @@ import actual.budget.db.dao.DashboardDao
 import actual.budget.db.dao.DashboardDao.Companion.DEFAULT_HEIGHT
 import actual.budget.db.dao.DashboardDao.Companion.DEFAULT_WIDTH
 import actual.budget.db.dao.DashboardDao.Companion.MAX_WIDTH
-import actual.budget.di.BudgetComponentStateHolder
+import actual.budget.di.BudgetGraphHolder
 import actual.budget.di.throwIfWrongBudget
 import actual.budget.model.BudgetId
 import actual.budget.model.WidgetId
@@ -29,7 +29,7 @@ import logcat.logcat
 @HiltViewModel(assistedFactory = ChooseReportTypeViewModel.Factory::class)
 class ChooseReportTypeViewModel @AssistedInject constructor(
   private val uuidGenerator: UuidGenerator,
-  budgetComponents: BudgetComponentStateHolder,
+  budgetComponents: BudgetGraphHolder,
   @Assisted inputs: Inputs,
 ) : ViewModel() {
   // data sources

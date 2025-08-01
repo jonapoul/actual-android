@@ -22,7 +22,6 @@ import kotlinx.coroutines.launch
 import logcat.logcat
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
-import javax.inject.Inject
 import kotlin.time.toJavaInstant
 
 @HiltViewModel

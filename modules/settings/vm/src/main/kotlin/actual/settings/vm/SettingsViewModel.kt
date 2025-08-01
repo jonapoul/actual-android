@@ -12,7 +12,6 @@ import dev.jonpoulton.preferences.core.asStateFlow
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.coroutines.flow.StateFlow
-import javax.inject.Inject
 
 @HiltViewModel
 class SettingsViewModel @Inject internal constructor(

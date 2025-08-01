@@ -26,7 +26,6 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import logcat.logcat
-import javax.inject.Inject
 import kotlin.time.Duration.Companion.seconds
 
 @HiltViewModel

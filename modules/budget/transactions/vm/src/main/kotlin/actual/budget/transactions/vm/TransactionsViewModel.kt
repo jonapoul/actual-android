@@ -5,7 +5,7 @@ import actual.budget.db.dao.AccountsDao
 import actual.budget.db.dao.PreferencesDao
 import actual.budget.db.dao.TransactionsDao
 import actual.budget.db.transactions.GetById
-import actual.budget.di.BudgetComponentStateHolder
+import actual.budget.di.BudgetGraphHolder
 import actual.budget.di.throwIfWrongBudget
 import actual.budget.model.AccountSpec
 import actual.budget.model.Amount
@@ -48,7 +48,7 @@ import kotlin.collections.map
 @HiltViewModel(assistedFactory = TransactionsViewModel.Factory::class)
 class TransactionsViewModel @AssistedInject constructor(
   @Assisted inputs: Inputs,
-  components: BudgetComponentStateHolder,
+  components: BudgetGraphHolder,
   contexts: CoroutineContexts,
 ) : ViewModel() {
   // data sources
