@@ -15,6 +15,7 @@ plugins {
   alias(libs.plugins.manifestLock)
   alias(libs.plugins.convention.android.base)
   alias(libs.plugins.convention.compose)
+  alias(libs.plugins.convention.dependencyCheck)
   alias(libs.plugins.convention.di)
   alias(libs.plugins.convention.diagrams)
   alias(libs.plugins.convention.kotlin.jvm)
@@ -25,6 +26,10 @@ plugins {
 
 dependencyGuard {
   configuration("releaseRuntimeClasspath")
+}
+
+dependencyCheck {
+  scanConfigurations = listOf("releaseRuntimeClasspath")
 }
 
 tasks.withType<KotlinCompile>().configureEach {
