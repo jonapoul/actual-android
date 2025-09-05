@@ -22,6 +22,7 @@ import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metro.Inject
 import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -104,6 +105,8 @@ class ListBudgetsViewModel(
       try {
         val request = DeleteUserFileRequest(id, token)
         syncApi.delete(request)
+      } catch (e: CancellationException) {
+        throw e
       } catch (e: Exception) {
         logcat.e(e) { "Failed deleting $id" }
       }

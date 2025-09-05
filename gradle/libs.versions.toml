@@ -10,7 +10,7 @@ compose = "1.9.0-rc01"
 composeHotReload = "1.0.0-beta06"
 dependencyGuard = "0.5.0"
 dependencyVersions = "0.52.0"
-detekt = "1.23.8"
+detekt = "2.0.0-alpha.0"
 doctor = "0.12.1"
 jacoco = "0.8.13"
 kotlin = "2.2.10"
@@ -74,7 +74,7 @@ plugin-blueprint-recipes = { module = "dev.jonpoulton.blueprint:recipes", versio
 plugin-burst = { module = "app.cash.burst:burst-gradle-plugin", version.ref = "burst" }
 plugin-compose = { module = "org.jetbrains.compose:org.jetbrains.compose.gradle.plugin", version.ref = "compose" }
 plugin-composeHotReload = { module = "org.jetbrains.compose.hot-reload:hot-reload-gradle-plugin", version.ref = "composeHotReload" }
-plugin-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+plugin-detekt = { module = "dev.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 plugin-detektCompose = { module = "io.nlopez.compose.rules:detekt", version.ref = "androidx-compose-rules" }
 plugin-jacoco = { module = "org.jacoco:org.jacoco.core", version.ref = "jacoco" }
 plugin-kotlin-compose = { module = "org.jetbrains.kotlin.plugin.compose:org.jetbrains.kotlin.plugin.compose.gradle.plugin", version.ref = "kotlin" }
@@ -177,7 +177,7 @@ compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 composeHotReload = { id = "org.jetbrains.compose.hot-reload", version.ref = "composeHotReload" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
 dependencyVersions = { id = "com.github.ben-manes.versions", version.ref = "dependencyVersions" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+detekt = { id = "dev.detekt", version.ref = "detekt" }
 doctor = { id = "com.osacky.doctor", version.ref = "doctor" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
