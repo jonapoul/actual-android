@@ -10,6 +10,7 @@ import actual.prefs.KeyPreferences
 import alakazam.kotlin.core.CoroutineContexts
 import alakazam.kotlin.core.requireMessage
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.withContext
 import logcat.logcat
 import okio.Buffer
@@ -73,6 +74,8 @@ class Decrypter(
       result()
     } catch (e: UnknownAlgorithmException) {
       DecryptResult.UnknownAlgorithm(e.algorithm)
+    } catch (e: CancellationException) {
+      throw e
     } catch (e: Exception) {
       DecryptResult.OtherFailure(e.requireMessage())
     }
