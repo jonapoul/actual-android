@@ -58,11 +58,11 @@ class SyncDownloadApi(
         val contentLength = response.contentLength() ?: error("No content length in response? $response")
         val sink = fileSystem.sink(path)
         var count = 0L
-        sink.use { sink ->
+        sink.use { s ->
           while (!channel.exhausted()) {
             val chunk = channel.readRemaining(CHANNEL_BUFFER_SIZE)
             count += chunk.remaining
-            chunk.transferTo(sink)
+            chunk.transferTo(s)
             emit(SyncDownloadState.InProgress(count, contentLength))
           }
         } // use

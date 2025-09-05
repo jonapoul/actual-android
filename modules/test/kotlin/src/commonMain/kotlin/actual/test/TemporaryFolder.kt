@@ -15,7 +15,7 @@ class TemporaryFolder(
   lateinit var root: Path
     private set
 
-  override fun intercept(testFunction: TestFunction) = try {
+  override fun intercept(testFunction: TestFunction): Unit = try {
     root = createTempDirectory().toOkioPath()
     testFunction()
   } finally {
