@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import logcat.logcat
 
-@Suppress("unused")
+@Suppress("unused", "VarCouldBeVal")
 @Inject
 class ReportsDashboardViewModel(
   @Assisted private val token: LoginToken,
